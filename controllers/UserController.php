@@ -9,9 +9,12 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\OrganizationForm;
+use app\models\Organization;
 
 class UserController extends Controller
 {
+    public $layout = 'main_user';
 
     public function behaviors()
     {
@@ -51,7 +54,10 @@ class UserController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = Organization::find()->all();
+        return $this->render('index', [
+            'model' => $model,
+        ]);
     }
 
     public function actionLogout()
@@ -63,17 +69,15 @@ class UserController extends Controller
 
     public function actionOrganization()
     {
-        return $this->render('organization');
+        $model = Organization::find()->all();
+        return $this->render('organization', [
+            'model' => $model,
+        ]);
     }
 
     public function actionOrganizationCard()
     {
         return $this->render('organization-card');
-    }
-
-    public function actionFormBuilder()
-    {
-        return $this->render('form-builder');
     }
 
     public function actionQuestionnaire()
@@ -88,21 +92,23 @@ class UserController extends Controller
 
 
     public function actionOrganizationCreate(){
-        if (!Yii::$app->user->isGuest) {
+        if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-        $model = new SignupForm();
+        $model = new OrganizationForm();
         if (Yii::$app->request->isPost)
         {
             $model->load(Yii::$app->request->post());
-            if($model->load(Yii::$app->request->post()) && $model->signup()){
+            if($model->load(Yii::$app->request->post()) && $model->create()){
                 print_r(Yii::$app->request->post());
                 //return $this->goBack();
             }
 
         }
         
-        return $this->render('signup', compact('model'));
+        return $this->render('create-organization', [
+            'model' => $model,
+        ]);
     }
 
 }

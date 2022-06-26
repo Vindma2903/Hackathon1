@@ -31,12 +31,12 @@ a.asc:after, a.desc:after {
 }
 
 a.asc:after {
-    border-bottom: solid 7px #212529;
+    border-bottom: solid 7px #4E0189;
     border-top-width: 0;
 }
 
 a.desc:after {
-    border-top: solid 7px #212529;
+    border-top: solid 7px #4E0189;
     border-bottom-width: 0;
 }
 
@@ -81,4 +81,13 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+
+.bg-dark {
+    background-color: #4E0189 !important;
+}
+
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+    border-color: #4E0189;
+    box-shadow: 0 0 0 0.2rem rgba(126, 95, 249, 0.546);
 }

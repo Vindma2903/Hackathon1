@@ -2,17 +2,25 @@
 
 /** @var yii\web\View $this */
 
-use yii\helpers\Html;
-
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'ГИС ОП';
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="site-index">
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
+    <div class="jumbotron text-center bg-transparent">
+        <h1 class="display-4">ГИС ОТ!</h1>
 
-    <code><?= __FILE__ ?></code>
+        <p class="lead">Государственная информационная система охраны труда</p>
+
+        <p><a class="btn btn-lg btn-success" href="??r=site%2Flogin">Войти</a></p>
+    </div>
+
+    <div class="body-content">
+
+        <div class="row">
+            <div class="col-lg-4">
+                
+            </div>
+        </div>
+
+    </div>
 </div>

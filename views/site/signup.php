@@ -7,7 +7,7 @@
 use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
 
-$this->title = 'Signup';
+$this->title = 'Регистрация | ГИС ОП';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
@@ -20,9 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'layout' => 'horizontal',
         'fieldConfig' => [
             'template' => "{label}\n{input}\n{error}",
-            'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
-            'inputOptions' => ['class' => 'col-lg-3 form-control'],
-            'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
+            'labelOptions' => ['class' => 'col-lg-11 col-form-label mr-lg-3'],
+            'inputOptions' => ['class' => 'col-lg-12 form-control'],
+            'errorOptions' => ['class' => 'col-lg-11 invalid-feedback'],
         ],
     ]); ?>
 

@@ -48,7 +48,7 @@ class OrganizationForm extends Model{
         
         if ($this->validate()) {
             $organization = new Organization();
-            $organization->full_name = $this->username;
+            $organization->full_name = $this->full_name;
             $organization->abbreviated_name = $this->abbreviated_name;
             $organization->date_registration = $this->date_registration;
             $organization->legal_address = $this->legal_address;
@@ -61,11 +61,7 @@ class OrganizationForm extends Model{
             $organization->okpo = $this->okpo;
             $organization->uid = $this->getUid();
             $organization->save(false);
-            //$auth = Yii::$app->authManager;
-            //$userRole = $auth->getRole('user');
-            //$auth->assign($userRole, $user->getId());
-
-            print_r($user);
+            
         }
 
         return null;
